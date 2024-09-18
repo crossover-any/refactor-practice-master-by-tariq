@@ -9,9 +9,9 @@ import java.math.BigDecimal;
  */
 public class MovieRentalCalcResult {
 
-    BigDecimal amount = BigDecimal.ZERO;
+    BigDecimal amount;
 
-    int frequentRenterPoints = 0;
+    int frequentRenterPoints;
 
     public MovieRentalCalcResult(BigDecimal amount, int frequentRenterPoints) {
         this.amount = amount;

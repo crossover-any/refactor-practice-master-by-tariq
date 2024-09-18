@@ -6,7 +6,6 @@ import com.refactor.practice.domain.movie.model.val.MovieRentalCalcResult;
 import com.refactor.practice.domain.movie.service.MovieRentalCalculator;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.Vector;
 
 public class Customer {
@@ -34,7 +33,7 @@ public class Customer {
 			MovieRentalCalculator calculator = MoviePriceCalculatorFactory.getCalculator(each.getMovie().getPriceCode());
 			MovieRentalCalcResult calcResult = calculator.calc(new MovieRentalCalcCommand(each));
 			// add total
-			totalAmount = totalAmount.add(calcResult.getAmount()).setScale(1, RoundingMode.FLOOR);
+			totalAmount = totalAmount.add(calcResult.getAmount());
 			frequentRenterPoints += calcResult.getFrequentRenterPoints();
 			//show figures for this rental
 			result.append("\t")
